@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+        <h:form>
+            <table>
+                <h:panelGrid columns="2" columnClasses="column" cellpadding="5">
+                    <h:outputLabel for="basic" value="Basic:" />
+                    <p:inplace id="basic">
+                        <p:inputText value="asdf" />
+                    </p:inplace>
+
+                    <h:outputLabel for="ajax" value="Ajax:" />
+                    <p:inplace id="ajax" editor="true">
+                        <p:inputText value="asdfghjk" required="true" label="text" />
+                    </p:inplace>
+
+                    <h:outputLabel for="event" value="Dblclick"/>
+                    <p:inplace id="event" label="Cities" effectSpeed="fast" event="dblclick">
+                        <h:selectOneMenu>
+                            <f:selectItem itemLabel="New York" itemValue="0" />
+                            <f:selectItem itemLabel="London" itemValue="1" />
+                            <f:selectItem itemLabel="Paris" itemValue="2" />
+                            <f:selectItem itemLabel="Berlin" itemValue="3" />
+                        </h:selectOneMenu>
+                    </p:inplace>
+
+
+
+                    <h:outputLabel for="facet" value="Facet:" />
+                    <p:inplace id="facet" effect="none">
+                        <f:facet name="output">
+                            Yes or No
+                        </f:facet>
+                        <f:facet name="input">
+                            <h:selectBooleanCheckbox />
+                        </f:facet>
+                    </p:inplace>
+
+                    <h:outputLabel for="image" value="Image:" />
+                    <p:inplace id="image" label="Show" effect="slide">
+                        <!--<p:graphicImage name="/images/demo.jpg"  />-->
+                        <img src="images/demo.jpg" alt=""/>
+                    </p:inplace>
+
+                </h:panelGrid>
+            </table>
+        </h:form>
+
+    </h:body>
+</html>
+
